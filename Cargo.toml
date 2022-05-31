@@ -1,6 +1,6 @@
 [package]
 name = "owoifier"
-version = "0.1.0"
+version = "1.0.0"
 authors = ["FernOfSigma <fernofsigma@tuta.io>"]
 edition = "2021"
 description = "Translates English text into OwO using magic."
