@@ -2,7 +2,6 @@ use clap::{arg, command};
 
 mod owoifier {
     use std::borrow::Cow;
-
     use lazy_static::lazy_static;
     use regex::Regex;
 
@@ -24,7 +23,6 @@ mod owoifier {
         };
     }
 
-    /// Translates english text into OwO.
     pub fn owoify(text: &str) -> Cow<str> {
         let mut temp = Cow::from(text);
         for (re, rep) in MAPPING.to_owned().into_iter() {
@@ -35,20 +33,18 @@ mod owoifier {
 }
 
 mod cli {
+    use super::owoifier;
     use std::io::{self, BufRead};
-
     use clap::Values;
 
     fn output(text: &str) {
-        println!("{}", super::owoifier::owoify(&text));
+        println!("{}", owoifier::owoify(&text));
     }
 
-    /// Joins the given arguments into a sentence and outputs them.
     pub fn handle_values(values: Values) {
-        output(&values.collect::<Vec<&str>>().join(" "));
+        output(&values.collect::<Vec<_>>().join(" "));
     }
 
-    /// Reads line-by-line from stdin and outputs each line.
     pub fn handle_stdin() {
         for ln in io::stdin().lock().lines() {
             output(&ln.unwrap());
