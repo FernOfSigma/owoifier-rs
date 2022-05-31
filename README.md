@@ -5,6 +5,6 @@ $ cargo install owoifier
 
 # Usage
 ```console
-$ owoifier Hello world!
+$ owoifier "Hello world!"
 Hewwo wowwd!
 ```
