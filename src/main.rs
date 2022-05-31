@@ -35,14 +35,12 @@ mod owoifier {
 }
 
 mod cli {
-    use crate::owoifier;
-
     use std::io::{self, BufRead};
 
     use clap::Values;
 
     fn output(text: &str) {
-        println!("{}", owoifier::owoify(&text));
+        println!("{}", super::owoifier::owoify(&text));
     }
 
     /// Joins the given arguments into a sentence and outputs them.
