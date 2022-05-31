@@ -1,0 +1,15 @@
+[package]
+name = "owoifier"
+version = "0.1.0"
+description = "Translate English text into OwO using magic."
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+lazy_static = "1.4.0"
+regex = "1"
+
+[dependencies.clap]
+version = "3.1.18"
+features = ["cargo"]
