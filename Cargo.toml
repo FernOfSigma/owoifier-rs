@@ -1,12 +1,18 @@
 [package]
 name = "owoifier"
-description = "Translates English text into OwO using magic."
 version = "0.1.0"
 authors = ["FernOfSigma <fernofsigma@tuta.io>"]
-
 edition = "2021"
-readme = "README.md"
+description = "Translates English text into OwO using magic."
 
+documentation = "https://github.com/FernOfSigma/owoifier-rs"
+homepage = "https://github.com/FernOfSigma/owoifier-rs"
+repository = "https://github.com/FernOfSigma/owoifier-rs"
+
+readme = "README.md"
+license = "GPL-3.0-or-later"
+
+keywords = ["owo", "command-line", "meme"]
 categories = ["command-line-utilities"]
 
 [dependencies]
