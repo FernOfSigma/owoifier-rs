@@ -1,11 +1,9 @@
 use std::io::{stdin, BufRead};
-
 use clap::{arg, command, Values};
-
-use owoifier::owoify;
+use owoifier::OwOifier;
 
 fn show(text: &str) {
-    println!("{}", owoify(text));
+    println!("{}", text.owoify());
 }
 
 fn show_values(values: Values) {
