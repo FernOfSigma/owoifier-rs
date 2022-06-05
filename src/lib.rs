@@ -1,14 +1,23 @@
+//! Translates English text to OwO.
+//!
+//! # Examples
+//! ```
+//! use owoifier::OwOifier;
+//!
+//! let text = "Hello world!".owoify();
+//! assert_eq!(text, "Hewwo wowwd!");
+//! ```
+
 use lazy_static::lazy_static;
 use regex::{Regex, RegexBuilder};
 
 lazy_static! {
     static ref TABLE: Vec<(Regex, String)> = {
-        let mut v = vec![]; 
+        let mut v = vec![];
         let patterns = [
             ["n([aeiou])", "ny$1"],
             ["(?:r|l)", "w"],
-            ["ove", "uv"],
-            ["th", "d"],
+            ["ove", "uv"]
         ];
 
         for [x, y] in patterns {
@@ -33,13 +42,6 @@ pub trait OwOifier {
 }
 
 impl OwOifier for str {
-    /// Translates English text to OwO.
-    ///
-    /// # Examples
-    /// ```
-    /// use owoifier::OwOifier;
-    /// assert_eq!("Hello world!".owoify(), "Hewwo wowwd!");
-    /// ```
     fn owoify(&self) -> String {
         let mut owo = self.to_string();
         for (re, dst) in TABLE.iter().cloned() {
@@ -61,7 +63,5 @@ mod tests {
         assert_eq!("R L".owoify(), "W W");
         assert_eq!("ove".owoify(), "uv");
         assert_eq!("OVE".owoify(), "UV");
-        assert_eq!("th".owoify(), "d");
-        assert_eq!("TH".owoify(), "D");
     }
 }

@@ -1,6 +1,6 @@
-use std::io::{stdin, BufRead};
 use clap::{arg, command, Values};
 use owoifier::OwOifier;
+use std::io::{stdin, BufRead};
 
 fn show(text: &str) {
     println!("{}", text.owoify());
